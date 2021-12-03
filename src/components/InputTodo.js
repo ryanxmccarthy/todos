@@ -15,10 +15,10 @@ class InputTodo extends Component {
         return (
             <form>
                 <input 
-                    type='text' 
-                    placeholder='Add Todo' 
-                    value={this.state.title}
                     name='title'
+                    placeholder='Add Todo' 
+                    type='text' 
+                    value={this.state.title}               
                     onChange={this.onChange}
                 />
                 <button>Submit</button>
