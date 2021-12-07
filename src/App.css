@@ -11,3 +11,12 @@ body {
   height: 100vh;
   line-height: 1.4;
 }
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
