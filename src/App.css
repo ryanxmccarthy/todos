@@ -20,3 +20,17 @@ body {
   margin: 0 auto;
   max-width: 600px;
 }
+
+.form-container {
+  border-radius: calc(0.5 * 100px);
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.38);
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.inner {
+  padding: 8rem 10px 4rem;
+  width: 100%;
+}
