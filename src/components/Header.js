@@ -1,8 +1,13 @@
 import React from 'react'
 
 const Header = () => {
+    const headerStyle = {
+        lineHeight: '1.5em',
+        padding: '20px 0',
+    }
+
     return (
-        <header>
+        <header style={headerStyle}>
             <h1
                 style={{
                     color: '#444',
