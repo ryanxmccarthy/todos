@@ -3,7 +3,7 @@ import styles from './TodoItem.module.css'
 
 class TodoItem extends React.Component {
     handleEditing = () => {
-        console.log('edit mode activated');
+        console.log("edit mode activated")
     }
     
     render() {
