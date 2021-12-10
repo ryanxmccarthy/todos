@@ -2,8 +2,14 @@ import React from 'react'
 import styles from './TodoItem.module.css'
 
 class TodoItem extends React.Component {
+    state = {
+        editing: false,
+    }
+    
     handleEditing = () => {
-        console.log("edit mode activated")
+        this.setState({
+            editing: true,
+        })
     }
     
     render() {
@@ -15,6 +21,15 @@ class TodoItem extends React.Component {
         }
 
         const { completed, id, title } = this.props.todo;
+
+        let viewMode = {}
+        let editMode = {}
+        
+        if (this.state.editing) {
+            viewMode.display = 'none'
+        } else {
+            editMode.display = 'none'
+        }
 
         return (
             <li className={styles.item}>
@@ -28,6 +43,7 @@ class TodoItem extends React.Component {
                     <button onClick={() => this.props.deleteTodoProps(id)}>Delete</button>
                     <span style={completed ? completedStyle : null}>{title}</span>
                 </div>
+                <input className={styles.textInput} type='text' />
             </li>
         )    
     }     
