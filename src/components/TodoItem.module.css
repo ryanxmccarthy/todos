@@ -21,3 +21,9 @@
   outline: none;
   width: 50px;
 }
+
+.textInput {
+  border: 1px solid #dfdfdf;
+  padding: 10px;
+  width: 100%;
+}
