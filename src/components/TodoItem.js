@@ -35,15 +35,20 @@ class TodoItem extends React.Component {
             <li className={styles.item}>
                 <div onDoubleClick={this.handleEditing} style={viewMode}>
                     <input 
-                        type='checkbox' 
                         checked={completed}
                         className={styles.checkbox}
                         onChange={() => this.props.handleChangeProps(id)}
+                        type='checkbox'
                     />
                     <button onClick={() => this.props.deleteTodoProps(id)}>Delete</button>
                     <span style={completed ? completedStyle : null}>{title}</span>
                 </div>
-                <input className={styles.textInput} style={editMode} type='text' />
+                <input 
+                    className={styles.textInput} 
+                    style={editMode} 
+                    type='text' 
+                    value={title}
+                />
             </li>
         )    
     }     
