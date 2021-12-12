@@ -11,6 +11,10 @@ class TodoItem extends React.Component {
             editing: true,
         })
     }
+
+    handleUpdateDone = e => {
+        console.log(e.key)
+    }
     
     render() {
         const completedStyle = {
@@ -46,6 +50,7 @@ class TodoItem extends React.Component {
                 <input 
                     className={styles.textInput} 
                     onChange={e => {this.props.setUpdate(e.target.value, id)}}
+                    onKeyDown={this.handleUpdateDone}
                     style={editMode} 
                     type='text' 
                     value={title}
