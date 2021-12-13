@@ -7,23 +7,7 @@ import InputTodo from './InputTodo'
 
 class TodoContainer extends React.Component {
     state = {
-        todos: [
-            {
-                id: uuid(),
-                title: 'Setup development environment',
-                completed: true
-            },
-            {
-                id: uuid(),
-                title: 'Develop website and add content',
-                completed: false
-            },
-            {
-                id: uuid(),
-                title: 'Deploy to live server',
-                completed: false
-            },
-        ]
+        todos: []
     }
 
     handleChange = id => {
@@ -71,6 +55,12 @@ class TodoContainer extends React.Component {
                 return todo
             }),
         })
+    }
+
+    componentDidMount() {
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response => response.json())
+            .then(data => console.log(data))
     }
     
     render() {
