@@ -30,5 +30,23 @@ const TodoContainer = () => {
         ])
     }
 
-    
+    const addTodoItem = title => {
+        const newTodo = {
+            id: uuidv4(),
+            title: title,
+            completed: false,
+        }
+        setTodos([...todos, newTodo])
+    }
+
+    const setUpdate = (updatedTitle, id) => {
+        setTodos(
+            todos.map(todo => {
+                if (todo.id === id) {
+                    todo.title = updatedTitle
+                }
+                return todo
+            })
+        )
+    }
 }
