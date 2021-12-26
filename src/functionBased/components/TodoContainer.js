@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 //random id generator
 import { v4 as uuid } from 'uuid';
 import TodosList from './TodosList'
@@ -49,6 +49,10 @@ const TodoContainer = () => {
             })
         )
     }
+
+    useEffect(() => {
+        console.log('test run')
+    }, []);
 
     return (
         <div className='container'>
