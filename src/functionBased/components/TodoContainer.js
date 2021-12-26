@@ -32,7 +32,7 @@ const TodoContainer = () => {
 
     const addTodoItem = title => {
         const newTodo = {
-            id: uuidv4(),
+            id: uuid(),
             title: title,
             completed: false,
         }
@@ -49,4 +49,21 @@ const TodoContainer = () => {
             })
         )
     }
+
+    return (
+        <div className='container'>
+            <div className='inner'>
+                <Header />
+                <InputTodo addTodoProps={addTodoItem} />
+                <TodosList 
+                    deleteTodoProps={delTodo}
+                    handleChangeProps={handleChange}
+                    setUpdate={setUpdate}
+                    todos={todos}
+                />
+            </div>
+        </div>
+    )
 }
+
+export default TodoContainer
