@@ -17,6 +17,18 @@ const TodoContainer = () => {
                         completed: !todo.completed,
                     }
                 }
-            }))
+                return todo
+            })
+        )
     }
+
+    const delTodo = id => {
+        setTodos([
+            ...todos.filter(todo => {
+                return todo.id !== id
+            }),
+        ])
+    }
+
+    
 }
