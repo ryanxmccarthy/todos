@@ -53,14 +53,20 @@ const TodoContainer = () => {
     useEffect(() => {
         console.log('test run')
 
-        //getting stored items
+        // getting stored items
         const temp = localStorage.getItem('todos')
         const loadedTodos = JSON.parse(temp)
 
         if (loadedTodos) {
             setTodos(loadedTodos)
         }
-    }, [setTodos]);
+    }, []);
+
+    useEffect(() => {
+        // storing todos 
+        const temp = JSON.stringify(todos)
+        localStorage.setItem('todos', temp)
+    }, [todos])
 
     return (
         <div className='container'>
