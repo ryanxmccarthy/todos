@@ -6,7 +6,7 @@ import Header from './Header'
 import InputTodo from './InputTodo'
 
 const TodoContainer = () => {
-    const [todos, setTodos] = useState([])
+    const [todos, setTodos] = useState(getInitialTodos())
 
     const handleChange = id => {
         setTodos(prevState =>
@@ -50,17 +50,12 @@ const TodoContainer = () => {
         )
     }
 
-    useEffect(() => {
-        console.log('test run')
-
-        // getting stored items
+    function getInitialTodos() {
+        // getting stored todos
         const temp = localStorage.getItem('todos')
-        const loadedTodos = JSON.parse(temp)
-
-        if (loadedTodos) {
-            setTodos(loadedTodos)
-        }
-    }, []);
+        const savedTodos = JSON.parse(temp)
+        return savedTodos || []
+    }
 
     useEffect(() => {
         // storing todos 
