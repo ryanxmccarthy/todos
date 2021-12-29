@@ -1,10 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './TodoItem.module.css'
 
-class TodoItem extends React.Component {
-    state = {
-        editing: false,
-    }
+const TodoItem = props => {
+    const [editing, setEditing] = useState(false)
     
     handleEditing = () => {
         this.setState({
