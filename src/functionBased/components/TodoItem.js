@@ -40,13 +40,13 @@ const TodoItem = props => {
                     onChange={() => props.handleChangeProps(id)}
                     type='checkbox'
                 />
-                <button onClick={() => this.props.deleteTodoProps(id)}>Delete</button>
+                <button onClick={() => props.deleteTodoProps(id)}>Delete</button>
                 <span style={completed ? completedStyle : null}>{title}</span>
             </div>
             <input 
                 className={styles.textInput} 
-                onChange={e => {this.props.setUpdate(e.target.value, id)}}
-                onKeyDown={this.handleUpdateDone}
+                onChange={e => {props.setUpdate(e.target.value, id)}}
+                onKeyDown={handleUpdateDone}
                 style={editMode} 
                 type='text' 
                 value={title}
