@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Route, Routes, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom'
 //random id generator
 import { v4 as uuid } from 'uuid';
 import TodosList from './TodosList'
@@ -65,23 +65,18 @@ const TodoContainer = () => {
     }, [todos])
 
     return (
-        <Routes>
-<Route path='/'>
-            <div className='container'>
-                <div className='inner'>
-                    <Header />
-                    <InputTodo addTodoProps={addTodoItem} />
-                    <TodosList 
-                        deleteTodoProps={delTodo}
-                        handleChangeProps={handleChange}
-                        setUpdate={setUpdate}
-                        todos={todos}
-                    />
-                </div>
+        <div className='container'>
+            <div className='inner'>
+                <Header />
+                <InputTodo addTodoProps={addTodoItem} />
+                <TodosList 
+                    deleteTodoProps={delTodo}
+                    handleChangeProps={handleChange}
+                    setUpdate={setUpdate}
+                    todos={todos}
+                />
             </div>
-        </Route>  
-        </Routes>
-             
+        </div>
     )
 }
 
