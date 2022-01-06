@@ -12,6 +12,11 @@ body {
   line-height: 1.4;
 }
 
+.active-link {
+  color: orangered;
+  text-decoration: underline;
+}
+
 .container {
   align-items: center;
   display: flex;

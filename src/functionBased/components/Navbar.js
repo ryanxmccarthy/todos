@@ -23,9 +23,8 @@ const Navbar = () => {
                         <li key={link.id}>
                             <NavLink 
                                 activeClassName='active-link' 
-                                exact 
                                 to={link.path}
-                            >{link.text}</NavLink>
+                            exact>{link.text}</NavLink>
                         </li>
                     )
                 })}
