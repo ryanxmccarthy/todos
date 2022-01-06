@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     const links = [
@@ -14,13 +15,19 @@ const Navbar = () => {
         },
     ]
 
-    return <nav className='navBar'>
-        <ul>
-            {links.map(link => {
-                return <li key={link.id}>{link.text}</li>
-            })}
-        </ul>
-    </nav>
+    return (
+        <nav className='navBar'>
+            <ul>
+                {links.map(link => {
+                    return (
+                        <li key={link.id}>
+                            <Link to={link.path}>{link.text}</Link>
+                        </li>
+                    )
+                })}
+            </ul>
+        </nav>
+    )
 }
 
 export default Navbar
