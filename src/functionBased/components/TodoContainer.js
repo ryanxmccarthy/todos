@@ -67,6 +67,7 @@ const TodoContainer = () => {
     return (
         <div className='container'>
             <div className='inner'>
+                <Navbar />
                 <Header />
                 <InputTodo addTodoProps={addTodoItem} />
                 <TodosList 
